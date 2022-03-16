@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Imobil{
+    char proprietarul[100];
+    char tipul[15];
+    char adresa[100];
+    int suprafata;
+    int costul;
+    
+};
+
+void inser_val_array(struct Imobil* arr, int n){
+    for(int i = 0;i < n; i++){
+        fgetc(stdin);
+        printf("Proprietarul [%d]= ", i);
+        fgets(arr[i].proprietarul, 100, stdin);
+        printf("Tipul [%d]= ", i);
+        fgets(arr[i].tipul, 15, stdin);
+        printf("Adresa [%d] = ", i);
+        fgets(arr[i].adresa, 100, stdin);
+        printf("Suprafata [%d] =", i);
+        scanf("%i", &arr[i].suprafata);
+        printf("Costul [%d] =", i);
+        scanf("%i", &arr[i].costul);
+        
+    }
+    printf("Matricea a fost modificata cu succes..\n");
+}
+void print_tablou(struct Imobil* arr, int n){
+    printf("\n");
+    for(int i = 0; i < n; i++){
+        printf("Proprietarul [%d] = %s", i ,arr[i].proprietarul);
+        printf("\nTipul[%d]= %s", i, arr[i].tipul);
+        printf("\nAdresa [%d]= %s", i, arr[i].adresa);
+        printf("\nSuprafata [%d] = %d", i , arr[i].suprafata);
+        printf("\nCostul [%d] = %d", i , arr[i].costul);
+        printf("\n###--###--###");
+    }
+    printf("\n");
+}
+
+int main(){
+    int n = 3;
+    struct Imobil* arr=(struct Imobil*)malloc(n * sizeof(struct Imobil));
+    inser_val_array(arr, n);
+    print_tablou(arr,n);
+ 
+    
+    
+}
