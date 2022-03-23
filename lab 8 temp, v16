@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+    char input[50];
+    fgets(input, 50, stdin);
+    
+
+    FILE *fp;
+    fp = fopen("lucru.txt","w");
+    fwrite(input,1,sizeof(input),fp);
+}
