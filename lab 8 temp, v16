@@ -9,5 +9,6 @@ int main(){
 
     FILE *fp;
     fp = fopen("lucru.txt","w");
-    fwrite(input,1,sizeof(input),fp);
+    fwrite(input,sizeof(input),1,fp);
+    
 }
