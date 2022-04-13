@@ -9,6 +9,7 @@ typedef struct  disciplina
     char departamentul[5];
     int anul;
     int nr_ore;
+    struct disciplina *next;
 }disciplina;
 disciplina *head;
 
@@ -43,7 +44,16 @@ void read(){
             scanf("%s", c->facultatea);
             printf("Departamentul: ");
             scanf("%s", c->departamentul);
-            printf("Anul: ")
-            
+            printf("Anul: ");
+            scanf("%d", &c->anul);
+            printf("Nr ore: ");
+            scanf("%d", &c->nr_ore);
+            c=c->next;
     }
+}
+
+int main(){
+    int creare();
+    void read();
+    return 0;
 }
