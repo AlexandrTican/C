@@ -4,7 +4,7 @@
 
 typedef struct  disciplina
 {
-    char denumirea[20];
+    char den[20];
     char facultatea[5];
     char departamentul[5];
     int anul;
@@ -15,8 +15,35 @@ disciplina *head;
 int creare(int n)
 {
     int i;
-    muzeu *c, *p;
+    disciplina *c, *p;
     for(i = 0; i < n; i++){
-        
+        c=(disciplina*)malloc(sizeof(disciplina));
+        if(c==NULL){
+            return 0;
+        }
+        if(i==0){
+            head = c;
+            p = c;
+        }
+        else{
+            p -> next = c;
+            p = c;
+        }
+    }
+    p->next=NULL;
+    return 1;
+}
+void read(){
+    disciplina *c = head;
+    int i = 0;
+    while (c){
+            printf("Denumirea: ");
+            scanf("%s", c->den);
+            printf("Facultatea: ");
+            scanf("%s", c->facultatea);
+            printf("Departamentul: ");
+            scanf("%s", c->departamentul);
+            printf("Anul: ")
+            
     }
 }
