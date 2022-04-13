@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct  disciplina
+{
+    char denumirea[20];
+    char facultatea[5];
+    char departamentul[5];
+    int anul;
+    int nr_ore;
+}disciplina;
+disciplina *head;
+
+int creare(int n)
+{
+    int i;
+    muzeu *c, *p;
+    for(i = 0; i < n; i++){
+        
+    }
+}
